@@ -1,0 +1,1611 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CORE FOTOGRAFÍA | El instante perfecto</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --cream: #F7F1E8;
+    --paper: #FCFAF6;
+    --brown: #49352B;
+    --terra: #B66E52;
+    --sand: #E6D6C5;
+    --ink: #5E5047;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--paper);
+    color: var(--brown);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+section {
+    padding: 80px 5%;
+    scroll-margin-top: 85px;
+}
+
+/* ========== ENCABEZADO Y MENÚ ========== */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(247, 241, 232, 0.98);
+    border-bottom: 1px solid var(--sand);
+    padding: 18px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+}
+
+.logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-decoration: none;
+    white-space: nowrap;
+    color: var(--brown);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+nav a,
+.dropbtn {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--brown);
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+nav a:hover,
+.dropbtn:hover {
+    color: var(--terra);
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -12px;
+    min-width: 180px;
+    padding: 9px 0;
+    background: var(--cream);
+    border: 1px solid var(--sand);
+    box-shadow: 0 12px 25px #49352b18;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 13px 16px;
+}
+
+/* ========== PORTADA PRINCIPAL ========== */
+
+.hero {
+    min-height: 78vh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    color: white;
+    padding: 70px 20px;
+
+    background:
+        linear-gradient(#2C211B66, #2C211B66),
+        url('https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/486208768_1409395237049820_4686724519222599058_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1365&ctp=s2048x1365&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=7VYtYQt74pQQ7kNvwGBr-rQ&_nc_oc=AdqBB4ObgqUDwTcHYByg-oQXCS8_xWoFtBxLaJtaLqzigtAsMQGAxkE2etlFAn6h3CMmaTPjmYtBVprMgwqwT-oa&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=075swjzEiZ6IPNmxNhZWMQ&_nc_ss=7b2a8&oh=00_AQPWBXM26JMgicQeJaIPAcvm5IrSAGRFRdaufTM_WSvNFQ&oe=6ADD92C4 ')
+        center 45% / cover no-repeat;
+}
+
+.hero small {
+    color: #F5DFD1;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(44px, 7vw, 94px);
+    font-weight: 400;
+    letter-spacing: 4px;
+    margin: 15px 0 0;
+}
+
+.hero h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(23px, 3vw, 34px);
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 28px;
+}
+
+/* BOTONES */
+
+.btn {
+    display: inline-block;
+    background: var(--terra);
+    border: 1px solid var(--terra);
+    color: white;
+    text-decoration: none;
+    padding: 14px 24px;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 1.7px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: var(--brown);
+    border-color: var(--brown);
+}
+
+/* ========== TÍTULOS DE SECCIONES ========== */
+
+.heading {
+    text-align: center;
+    margin: 0 auto 40px;
+    max-width: 750px;
+}
+
+.eyebrow {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--terra);
+}
+
+.heading h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 51px);
+    font-weight: 500;
+    margin: 8px 0;
+}
+
+.heading p {
+    font-size: 12px;
+    line-height: 1.8;
+    color: var(--ink);
+}
+
+/* ========== INICIO: GALERÍA DE 15 FOTOS ========== */
+
+#inicio {
+    background: var(--paper);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+    max-width: 1600px;
+    margin: auto;
+}
+
+.gallery-item {
+    height: clamp(250px, 27vw, 400px);
+    position: relative;
+    overflow: hidden;
+    background: var(--sand);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.45s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-item span {
+    display: none; /* Oculta los nombres solo en la galería principal */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 35px 16px 15px;
+    color: white;
+    font-size: 11px;
+    letter-spacing: 2px;
+    background: linear-gradient(transparent, #17110fc9);
+}
+
+/* Créditos debajo de la galería principal */
+.gallery-credits {
+    text-align: center;
+    margin: 28px auto 0;
+    font-size: 12px;
+    line-height: 1.8;
+    color: var(--ink);
+}
+.gallery-credits.hero-credits {
+    text-align: left;
+    margin: 14px 0 0;
+}
+.gallery-credits strong {
+    color: var(--brown);
+}
+
+/* ========== NOSOTROS ========== */
+
+#nosotros {
+    background: var(--cream);
+}
+
+.about {
+    max-width: 1250px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    align-items: center;
+}
+
+.about img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.about h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(37px, 4vw, 52px);
+    font-weight: 500;
+    margin: 12px 0 20px;
+}
+
+.about p {
+    font-size: 13px;
+    line-height: 1.9;
+    color: var(--ink);
+    margin-bottom: 20px;
+}
+
+/* ========== LOCACIONES DE TAMPICO ========== */
+
+#locaciones {
+    background: var(--paper);
+}
+
+.locations {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    max-width: 1500px;
+    margin: auto;
+}
+
+.location-card {
+    background: white;
+    text-align: center;
+    padding-bottom: 28px;
+    border: 1px solid var(--sand);
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.location-card:hover {
+    transform: translateY(-4px);
+}
+
+/* Fondos decorativos sin imágenes rotas */
+
+.location-cover {
+    height: 320px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 22px;
+    position: relative;
+    overflow: hidden;
+}
+
+.location-cover img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.location-cover::before,
+
+
+
+
+
+
+.location-cover span {
+    position: relative;
+    z-index: 1;
+    color: white;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+}
+
+/* Casa de la Naturaleza */
+
+.naturaleza { background: var(--sand); }
+
+/* Playa Miramar */
+
+.miramar { background: var(--sand); }
+
+/* Laguna del Carpintero */
+
+.laguna { background: var(--sand); }
+
+.location-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 29px;
+    font-weight: 500;
+    margin: 20px 10px 8px;
+    color: var(--brown);
+}
+
+.location-card p {
+    font-size: 11px;
+    line-height: 1.8;
+    color: var(--ink);
+    padding: 0 18px;
+}
+
+.location-card a {
+    display: inline-block;
+    color: var(--terra);
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    margin-top: 18px;
+    border-bottom: 1px solid var(--terra);
+    padding-bottom: 5px;
+}
+
+.location-card a:hover {
+    color: var(--brown);
+}
+
+/* ========== PAQUETES ========== */
+
+#paquetes {
+    background: var(--cream);
+}
+
+.packages {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    max-width: 1500px;
+    margin: auto;
+}
+
+.package-card {
+    background: var(--paper);
+    border: 1px solid var(--sand);
+    text-align: center;
+    padding: 30px 20px 26px;
+    transition: 0.3s;
+    min-width: 0;
+}
+
+.package-card:hover {
+    border-color: var(--terra);
+}
+
+.package-card .num {
+    color: var(--terra);
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.package-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+.package-card p {
+    font-size: 11px;
+    color: var(--ink);
+    line-height: 1.8;
+    margin-bottom: 19px;
+}
+
+.package-card button {
+    background: none;
+    border: 0;
+    border-bottom: 1px solid var(--terra);
+    color: var(--terra);
+    padding: 0 0 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.package-card button:hover {
+    color: var(--brown);
+}
+
+/* MINI GALERÍAS DESPLEGABLES */
+
+.mini-gallery {
+    display: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 24px;
+    text-align: left;
+}
+
+.mini-gallery.open {
+    display: grid;
+}
+
+.mini-gallery figure {
+    margin: 0;
+    overflow: hidden;
+    background: var(--sand);
+}
+
+.mini-gallery img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.mini-gallery img:hover {
+    transform: scale(1.05);
+}
+
+.mini-gallery figcaption {
+    font-size: 10px;
+    padding: 9px;
+    color: var(--ink);
+    background: var(--paper);
+}
+
+/* ========== FORMULARIO ========== */
+
+#formulario {
+    background: var(--paper);
+}
+
+.contact-form {
+    max-width: 760px;
+    margin: auto;
+    padding: 35px;
+    background: var(--cream);
+    border: 1px solid var(--sand);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.field {
+    margin-bottom: 18px;
+}
+
+.field label {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.field input,
+.field select,
+.field textarea {
+    width: 100%;
+    padding: 13px;
+    background: var(--paper);
+    border: 1px solid var(--sand);
+    color: var(--brown);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    outline-color: var(--terra);
+}
+
+.field textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.contact-form .btn {
+    width: 100%;
+}
+
+#respuesta {
+    font-size: 12px;
+    line-height: 1.7;
+    margin-top: 14px;
+    color: var(--terra);
+}
+
+/* ========== REDES SOCIALES Y PIE DE PÁGINA ========== */
+
+footer {
+    background: var(--brown);
+    color: var(--cream);
+    text-align: center;
+    padding: 45px 20px 22px;
+}
+
+footer h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
+footer p {
+    font-size: 12px;
+    color: var(--sand);
+    margin: 8px 0 22px;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.socials a {
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border-bottom: 1px solid var(--terra);
+    padding-bottom: 6px;
+    color: var(--cream);
+}
+
+.socials a:hover {
+    color: #E0AD96;
+}
+
+.copy {
+    border-top: 1px solid #ffffff2b;
+    padding-top: 18px;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: var(--sand);
+}
+
+/* ========== DISEÑO PARA TABLET ========== */
+
+@media (max-width: 900px) {
+    header {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 14px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .locations {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .packages {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .about {
+        gap: 28px;
+    }
+
+    .about img {
+        height: 400px;
+    }
+}
+
+/* ========== DISEÑO PARA CELULARES ========== */
+
+@media (max-width: 600px) {
+    header {
+        padding: 15px 12px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    nav {
+        gap: 11px;
+    }
+
+    nav a,
+    .dropbtn {
+        font-size: 9px;
+    }
+
+    .hero {
+        min-height: 65vh;
+    }
+
+    .hero h1 {
+        letter-spacing: 2px;
+    }
+
+    section {
+        padding: 58px 5%;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .gallery-item {
+        height: 230px;
+    }
+
+    .locations,
+    .packages,
+    .about,
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .about img {
+        height: 340px;
+    }
+
+    .location-cover {
+        height: 260px;
+    }
+
+    .contact-form {
+        padding: 22px 16px;
+    }
+
+    .mini-gallery img {
+        height: 170px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ========== ENCABEZADO ========== -->
+
+<header>
+    <a class="logo" href="#portada">CORE FOTOGRAFÍA</a>
+
+    <nav aria-label="Menú principal">
+        <a href="#portada">Inicio</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#locaciones">Locaciones</a>
+
+        <div class="dropdown">
+            <button class="dropbtn" type="button">
+                Paquetes ▾
+            </button>
+
+            <div class="dropdown-menu">
+                <a href="#bautizo">Bautizo</a>
+                <a href="#xv">XV años</a>
+                <a href="#casuales">Casuales</a>
+                <a href="#navidad">Navidad</a>
+                <a href="#recien-nacido">Recién nacido</a>
+                <a href="#boda">Boda</a>
+                <a href="#sesiones-vaqueras">Sesiones vaqueras</a>
+                <a href="#maternidad">Maternidad</a>
+                <a href="#formal">Formal</a>
+                <a href="#pareja">Pareja</a>
+                <a href="#dias-especiales">Días especiales</a>
+            </div>
+        </div>
+
+        <a href="#formulario">Contacto</a>
+    </nav>
+</header>
+
+<main>
+
+<!-- ========== PORTADA ========== -->
+
+<section class="hero" id="portada">
+    <div>
+        <small>Tampico · Altamira · Madero</small>
+        <h1>CORE FOTOGRAFÍA</h1>
+        <h2>El instante perfecto</h2>
+
+        <a class="btn" href="#inicio">
+            Ver galería
+        </a>
+    </div>
+</section>
+
+<!-- ========== INICIO: 15 FOTOGRAFÍAS ========== -->
+
+<section id="inicio">
+    <div class="heading">
+        <span class="eyebrow">Galería</span>
+        <h2>Momentos para recordar</h2>
+    </div>
+
+    <div class="gallery">
+
+        <div class="gallery-item">
+            <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/709122909_1773758823946791_491777849642638295_n.jpg?stp=dst-jpg_tt6&cstp=mx1365x2048&ctp=s1365x2048&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=sPEbPxJOTZkQ7kNvwFuqw7S&_nc_oc=AdouL0JxO1qlbBYyWTPKjjumSO4E0ihHqWDgIO6swOBUbext6FizWyGCyUIz4qhF8-vFY894lDalytMSgzRP9CpE&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=BuiLl1RDz7ZD_iKmSnqYCw&_nc_ss=7b2a8&oh=00_AQN-yQ6dBztWxZfQ3ihhf7QTpUylGtEvTWJe-iZRt2b1tg&oe=6ADC206C" alt="Fotografía de novios" loading="lazy">
+            <span>AMOR</span>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/633233734_1684210612901613_7552925097252008085_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1338&ctp=p180x540&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=l7wJYCaJSAYQ7kNvwF7AG3h&_nc_oc=AdrsZaoPLcoGchT9n-KFlXguefeSRLhOmZGdNmm3nfNV94-p2m1gqZ1hKNKkdWPAclOFzT8AYWGTMBERMoqz76Az&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=7YwWL7gIA1M3Kw_X5F0DMw&_nc_ss=7b2a8&oh=00_AQP8MHB0P03o0TofdNkJ_P4pf8BJT0m-Ta1BHFOviE0x4A&oe=6ADC252C" alt="Celebración especial" loading="lazy">
+            <span>CELEBRACIONES</span>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/630999352_1678219326834075_2049411858767302591_n.jpg?stp=dst-jpg_tt6&cstp=mx1320x1332&ctp=s1320x1332&_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=9LPlxR6I6PUQ7kNvwEWRo5P&_nc_oc=AdoNbgqCl9rE75pllKKbJinV1cQ5paQxG-FAMHzGriK8Mip3IgimyI1NwmxH1PFmuYUkv_ILK8n1Ncpl_nfDmasZ&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=4UTunddO-5g4zvZD4LaRKg&_nc_ss=7b2a8&oh=00_AQMILJkPen2CRBxsDzVUt-MJCEDSxLQhF6nh1AxLavDnBg&oe=6ADC365D" alt="Boda" loading="lazy">
+            <span>RECUERDOS</span>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/486635173_1409395213716489_2305681402735969794_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1365&ctp=s2048x1365&_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=PAuyJ-cwU6UQ7kNvwGTDMc-&_nc_oc=AdpXrwJloXHL6TVk9UkChWzBuAu5V65dB0zXzctoFnRYCPYsPg_LlzwwQXrJeu0b-ujVNCjfIXVZ1dLBgGBMnwVP&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=eWHYNwWP7BUuHQXm2h9bow&_nc_ss=7b2a8&oh=00_AQNFZCM4mYK1XaaaPXwOzgjRsgQ9tDNP1IH6PKev2YNvnQ&oe=6ADC127D" alt="Decoración de boda" loading="lazy">
+            <span>DETALLES</span>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/486665244_1409711233684887_7903509400426580726_n.jpg?stp=dst-jpg_tt6&cstp=mx1365x2048&ctp=s1365x2048&_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_ohc=UeetSMSatNMQ7kNvwH3FuDQ&_nc_oc=AdokbyRKGH5uX18TLwXH_k6KNHW-WNxbtfTT1djPJ18LjkvOGXB-otn-HznqgPTVE1eWnNoboijQwchY-Q-5CR4_&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=XtxByVkLI8UkqXsTLbUOVg&_nc_ss=7b2a8&oh=00_AQO2tqLfqZxQ-djOFAvjBj1gCFSCrlfQIfoQUGuNiqYpgQ&oe=6ADC198E" alt="Pareja" loading="lazy">
+            <span>CONEXIONES</span>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/597177347_1627462531909755_7059634824815148660_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1299&ctp=s2048x1299&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=bVPi9dY_kkoQ7kNvwEwhGGF&_nc_oc=Adqls4E9DkDcKEDtz2WIGJyXRYh0DpaQ7k25XAacCE_rnItwo1f2KJEVpFwk1Lg9z8jcGFNf0-7lKPkb9gGLQusn&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=jc51xdclMu0ZEf-g5rtF7A&_nc_ss=7b2a8&oh=00_AQPAyP_7YHdHCBn2s33PF0dJ12hT4xqvB0-C44aDaMym4Q&oe=6ADC2D12" alt="Familia" loading="lazy">
+            <span>FAMILIA</span>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/702398297_1766189401370400_4207877865098381853_n.jpg?stp=dst-jpg_tt6&cstp=mx1494x2048&ctp=s1494x2048&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=kBAYE5CQB7wQ7kNvwEK24Sl&_nc_oc=Adp58YzFexkhOAfAgV310YIcvgQ4du9suJCTA-DSKKWvTsR8O--Nz9Ki-qne---HVEMsyCwWA4aI5_wkf2yRzpmn&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=l7dRK8uuHEJ1TM4ad-WQjQ&_nc_ss=7b2a8&oh=00_AQMdmR-skeFQ0dn1KD-LhvKk_Nal9f4wTjo-4Wx_5AzRlA&oe=6ADC20AF" alt="Personas compartiendo" loading="lazy">
+            <span>FELICIDAD</span>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/655835552_1712242426765098_3173364949865869821_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1365&ctp=s2048x1365&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=W59_TkbCvn4Q7kNvwHzy2kl&_nc_oc=AdrgbUFiGgthLi84D8LWxC2fEahGKxXCDxfcHivSj0S96RNm6sUF3BpqDD0gI58JOC2ynCGB8zlu32BhwEVNY2wy&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=qrNBAlasx7yRjdZVONptGA&_nc_ss=7b2a8&oh=00_AQO2mSWVNmh4RR_sfvg32ziMTD_jSCrfrahykPFJKLGmfg&oe=6ADC27F2" alt="Evento" loading="lazy">
+            <span>MOMENTOS</span>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/643533168_1695867791735895_7382080927435693410_n.jpg?stp=dst-jpg_tt6&cstp=mx1365x2048&ctp=s1365x2048&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=l0Q3Wn5_XqkQ7kNvwGSiEBI&_nc_oc=AdpjsvzVsSsdD92Uwnzch6Ec-L5PXLK7cS9PhlX_u8ynQrntLlhPy888U4uUlN2YHicE9gmhnjmy9jSebl-AOVW3&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=A8iZCSHtl_rG1xU08U_DDg&_nc_ss=7b2a8&oh=00_AQMjDEMAIMcf7ENbOm0-h6xQ0Swzra6tNGxVlu6gapI-hg&oe=6ADC0D09" alt="Paisaje natural" loading="lazy">
+            <span>NATURALEZA</span>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/650598415_1705988614057146_3784712967382171682_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1536&ctp=s2048x1536&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=xMUsEazmsNoQ7kNvwFioqOk&_nc_oc=Adq3mQYmdTDIHQp6VoD9PxmwMF1wvnm6JbEpkOprcmHzXVHcDko4xzE-A9IxENSdVwVn1uK87I-pvNXi9dksBLw_&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=S2oMrCsLnTfNCTPNnxW2DA&_nc_ss=7b2a8&oh=00_AQPfKLhJ6_bzyH9L_NBUqfslilBFpbIx1ODTKWa-jLBUHA&oe=6ADC371D" alt="Retrato" loading="lazy">
+            <span>RETRATOS</span>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/644936583_1700198651302809_8548006849871053050_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1365&ctp=s2048x1365&_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=5vjAKSwhL64Q7kNvwG_5TiN&_nc_oc=Adq35w02w0hYjnaoW_FZHkgzt7pxAvulqykczCFeBeJatQcfiExU6rLECIquWceqmsVT6FpL5tZLio53_Y90Wde3&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=3UrLbu2UutdzFYp-gNPCqw&_nc_ss=7b2a8&oh=00_AQOaHtJZdJCf8G9uTAmIghK1nT1sIdExgMrMRs_ozNzQsA&oe=6ADC3E58" alt="Retrato artístico" loading="lazy">
+            <span>ESENCIA</span>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/643899133_1694382468551094_6755843293443047019_n.jpg?stp=dst-jpg_tt6&cstp=mx1365x2048&ctp=s590x590&_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=bMUugUqDN0kQ7kNvwFYSn-l&_nc_oc=AdowM70fM8ojs_vytE66Ai4RbQKFKm3hEFhDgeyoFyqhoz_drsDVTyQAAcLQBeqz7f82JLTauDrK81J2pRr-ziPT&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=myBIM_jbATsJIs3lBhj39w&_nc_ss=7b2a8&oh=00_AQO-6tP1b6A8WE9Zx23bbiX_rRpGFYpsAtAY0Fj-VoQsgQ&oe=6ADC3788" alt="Retrato personal" loading="lazy">
+            <span>PERSONALIDAD</span>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/618639803_1664479938208014_4595384209545780256_n.jpg?stp=dst-jpg_tt6&cstp=mx1024x1024&ctp=s1024x1024&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=F8ZmNdUcIaIQ7kNvwGGDSWX&_nc_oc=AdoeDLxAMe7eyaclg-Hd7isf6Gq6wm5j80xB8y2tdFB1LZgO2WaMH2OrsLGBbCXX2OkrzMPp0tSN_auoXLSzefsR&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=GjzHfZgMcuYaUbvDD--VJA&_nc_ss=7b2a8&oh=00_AQP5pRA5dYJSVKOrV8XnQdEO0K97a4I52AtImCNmKjZZ_g&oe=6ADC1E93" alt="Flores" loading="lazy">
+            <span>DELICADEZA</span>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/719218812_1784051422917531_7767034430788760609_n.jpg?stp=dst-jpg_tt6&cstp=mx1365x2048&ctp=s1365x2048&_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=6_8szaA0yh8Q7kNvwFxRfgO&_nc_oc=AdpyUYI2HUcSe1XJLkekyqCqRne7nZfhTx8wBLXTshwvMW6Sv2u42SxczeqMtdHEt8Of74kX-CYtkYwiAMDTF8UJ&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=VXAXAKK5o_VkbdfHDRUozA&_nc_ss=7b2a8&oh=00_AQMBaI1i3htqAtVNjm1a1_Hx4c97qPoFrrkCm3-C6MdBvw&oe=6ADC243E" alt="Atardecer" loading="lazy">
+            <span>LUZ NATURAL</span>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/622863581_1665574694765205_9011584781173872652_n.jpg?stp=dst-jpg_tt6&cstp=mx1024x1024&ctp=s1024x1024&_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_ohc=NKdMjErQFkQQ7kNvwFwAyIx&_nc_oc=AdqQhGe_dKRa0JrUFQAHK2onIls1sU8s1j4ZZzGz64k59AlKQVT6KDPM8dTnsOW4T6kVFObhpHXjKZ7997arfXUU&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=UzwSO4_C6C9tc241rWmTYg&_nc_ss=7b2a8&oh=00_AQM9xQB7QDB0a4oUGXJqr7J1Fi3wbzlLSS0qjAHXjWxmuw&oe=6ADC1C41" alt="Momento espontáneo" loading="lazy">
+            <span>ESPONTANEIDAD</span>
+        </div>
+
+    </div>
+</section>
+
+<!-- ========== NOSOTROS ========== -->
+
+<section id="nosotros">
+    <div class="about">
+
+        <img
+            src="Core.jpeg"
+            alt="Cámara fotográfica"
+            loading="lazy">
+
+        <div>
+            <span class="eyebrow">Sobre nosotros</span>
+
+            <h2>CORE FOTOGRAFÍA</h2>
+
+            <p>
+                El instante perfecto.
+            </p>
+            <p class="gallery-credits hero-credits">
+                Fotógrafo principal: <strong>Jonatan Silva</strong><br>
+                Videógrafo: <strong>Arturo Flores</strong>
+            </p>
+
+            <a class="btn" href="#formulario">
+                Contactar
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- ========== LOCACIONES ========== -->
+
+<section id="locaciones">
+
+    <div class="heading">
+        <span class="eyebrow">Tampico y alrededores</span>
+        <h2>Locaciones</h2>
+    </div>
+
+    <div class="locations">
+
+        <!-- CASA DE LA NATURALEZA -->
+
+        <article class="location-card">
+
+            <div class="location-cover naturaleza">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9_B9vi1_i8g7r1HhgBSZBgFlQOhIwnRu4N5ckRAbIwxR-sjNX--4z65Y&s=10" alt="Casa de la Naturaleza">
+            </div>
+
+            <h3>Casa de la Naturaleza</h3>
+
+            <p>
+                Un entorno natural para capturar momentos especiales.
+            </p>
+
+            <a
+                href="https://www.google.com/maps/search/?api=1&query=Casa+de+la+Naturaleza+Tampico"
+                target="_blank"
+                rel="noopener noreferrer">
+                VER UBICACIÓN ↗
+            </a>
+
+        </article>
+
+        <!-- PLAYA MIRAMAR -->
+
+        <article class="location-card">
+
+            <div class="location-cover miramar">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHgm9MWIIe_CcyIPfqHS6Gdv85xhM0GfpYr4oR2qIZ3vRjAQ8BiO1W9-o&s=10" alt="Playa Miramar">
+            </div>
+
+            <h3>Playa Miramar</h3>
+
+            <p>
+                Mar, arena y atardeceres para fotografías inolvidables.
+            </p>
+
+            <a
+                href="https://www.google.com/maps/search/?api=1&query=Playa+Miramar+Ciudad+Madero+Tamaulipas"
+                target="_blank"
+                rel="noopener noreferrer">
+                VER UBICACIÓN ↗
+            </a>
+
+        </article>
+
+        <!-- LAGUNA DEL CARPINTERO -->
+
+        <article class="location-card">
+
+            <div class="location-cover laguna">
+                <img src="https://visitmexico.com/media/usercontent/685afe6e67eec-Imagen-de-WhatsApp-2025-06-24-a-las-13_gmxdot_28_gmxdot_04_5735d648_gmxdot_jpg" alt="Laguna del Carpintero">
+            </div>
+
+            <h3>Laguna del Carpintero</h3>
+
+            <p>
+                Paisajes tranquilos para sesiones fotográficas al aire libre.
+            </p>
+
+            <a
+                href="https://www.google.com/maps/search/?api=1&query=Laguna+del+Carpintero+Tampico"
+                target="_blank"
+                rel="noopener noreferrer">
+                VER UBICACIÓN ↗
+            </a>
+
+        </article>
+
+        <!-- ADUANA DE TAMPICO -->
+        <article class="location-card">
+            <div class="location-cover">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSmx1jAtPYmrJtQ_aYrPuv8IOPRScBji0LBlzZ4ZpIKXRQ_NLrKjrV9pxs&s=10" alt="Aduana de Tampico" loading="lazy">
+            </div>
+            <h3>Aduana de Tampico</h3>
+            <p>Arquitectura histórica y un escenario elegante para retratos.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Aduana+de+Tampico" target="_blank" rel="noopener noreferrer">VER UBICACIÓN ↗</a>
+        </article>
+
+        <!-- PLAYA TESORO -->
+        <article class="location-card">
+            <div class="location-cover">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2c/d7/aa/dc/caption.jpg?w=1200&h=1200&s=1" alt="Playa Tesoro de Altamira" loading="lazy">
+            </div>
+            <h3>Playa Tesoro, Altamira</h3>
+            <p>Un paisaje costero para sesiones naturales y al atardecer.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Playa+Tesoro+Altamira+Tamaulipas" target="_blank" rel="noopener noreferrer">VER UBICACIÓN ↗</a>
+        </article>
+
+        <!-- PARQUE FRAY ANDRES DE OLMOS -->
+        <article class="location-card">
+            <div class="location-cover">
+                <img src="https://irs1.4sqi.net/img/general/600x600/IKTNZ2GMBD1VQ1FND1JOZQHFXRETLANSM5JHRZHKA3ZWDA1X.jpg" alt="Parque Fray Andrés de Olmos" loading="lazy">
+            </div>
+            <h3>Parque Fray Andrés de Olmos</h3>
+            <p>Áreas verdes y rincones tranquilos para fotografías familiares.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Parque+Fray+Andres+de+Olmos+Tampico" target="_blank" rel="noopener noreferrer">VER UBICACIÓN ↗</a>
+        </article>
+
+        <!-- PARQUE METROPOLITANO -->
+        <article class="location-card">
+            <div class="location-cover">
+                <img src="https://enlineadirecta.info/wp-content/uploads/2022/08/Expo-Tampico.jpg" alt="Parque Metropolitano" loading="lazy">
+            </div>
+            <h3>Parque Metropolitano</h3>
+            <p>Un espacio al aire libre para sesiones casuales y de pareja.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Parque+Metropolitano+Tampico" target="_blank" rel="noopener noreferrer">VER UBICACIÓN ↗</a>
+        </article>
+
+        <!-- CENTRO DE TAMPICO -->
+        <article class="location-card">
+            <div class="location-cover">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQapwMA2r7AEX8u7iKFPbhQmB51kknofUeCOYVfQ6lR7c8RNeEga8H9jA&s=10" alt="Centro de Tampico" loading="lazy">
+            </div>
+            <h3>Centro de Tampico</h3>
+            <p>Calles y fachadas con carácter para retratos urbanos.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Centro+Historico+Tampico" target="_blank" rel="noopener noreferrer">VER UBICACIÓN ↗</a>
+        </article>
+
+        
+
+        
+
+        
+
+    </div>
+</section>
+
+<!-- ========== PAQUETES Y MINI GALERÍAS ========== -->
+
+<section id="paquetes">
+
+    <div class="heading">
+        <span class="eyebrow">Sesiones fotográficas</span>
+        <h2>Nuestros paquetes</h2>
+        <p>
+            Selecciona un paquete para ver su mini galería.
+        </p>
+    </div>
+
+    <div class="packages">
+
+        <!-- PAQUETE BAUTIZO -->
+
+        <article class="package-card" id="bautizo">
+
+            <span class="num">01 / CELEBRACIÓN</span>
+            <h3>Bautizo</h3>
+
+            <p>
+                Recuerdos de un día especial.
+            </p>
+
+            <button type="button"
+                aria-expanded="false"
+                onclick="toggleGallery('gal-bautizo', this)">
+                Ver mini galería +
+            </button>
+
+            <div class="mini-gallery" id="gal-bautizo">
+
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/703676572_1767593811229959_4255946981492911783_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1365&ctp=s2048x1365&_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_ohc=Y46NYcsHioYQ7kNvwEZFYzl&_nc_oc=Ado-QJmb9GuoTutXP5G9OHTqZ8j3dEdUCNNOPp4deoc1nPXzTUEkSGVRbbhbBu4jfaKsX8AZAxPQG3NIHrbYl6bf&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=rm_pAs8A5jkK5LmCoOaCXg&_nc_ss=7b2a8&oh=00_AQOji159zUzl3lnGWBjARnrRk9Eht8bnDHp1vg70c7GYOw&oe=6ADC29B1" alt="Familia reunida" loading="lazy">
+                    <figcaption>Familia</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/703907198_1767595307896476_3483147680835958562_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1365&ctp=s2048x1365&_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=ED2QBeIkJaEQ7kNvwGieapS&_nc_oc=AdptIbQhbi3VpWrC22KkbSkxJKTl-MN16xL73tSgcTtmFUBEQ6J96Zg7HN-cnzySTmZgNKKki7imgGZc9vT8Acfm&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=cyeqUzLAYTI5iNkpcPUiww&_nc_ss=7b2a8&oh=00_AQNAYNzPcnl-_OhCDXkCNL-h0zQeOa_suMWLf9WX_p9ZUQ&oe=6ADC110F" alt="Celebración familiar" loading="lazy">
+                    <figcaption>Celebración</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/706055017_1767594627896544_3496081189368730019_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1365&ctp=s2048x1365&_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=kksnX5T6L_UQ7kNvwGL1sM3&_nc_oc=Adpib6UaIlME6oLoxlc--vJwhxiJfwOeNTQEMCAbVz2hb7k9towSHUj63Td6W0s7_kkIQtWUy6HE0EnyE1KPVC7U&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=5miBusL_hOZBXatz-qVt6w&_nc_ss=7b2a8&oh=00_AQOy2erfOvZfuidQgO_s12gfNpDdEYltp9ObwlzsIR7d-A&oe=6ADC232B" alt="Detalles de celebración" loading="lazy">
+                    <figcaption>Detalles</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/703824756_1767593101230030_734984257306198536_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1365&ctp=s2048x1365&_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=hrafFm9Zum4Q7kNvwH5X9o-&_nc_oc=AdozVdXAs9KFQlRRN4lGFaXcIl80sXFEmpMzfwU7sw4FtIeRaaXoi6BTY3yK-LDP8NTnCnDQcG_pUeMzUW2Sklyk&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=MROuZjhS4vFe6w_8Tu0MlA&_nc_ss=7b2a8&oh=00_AQPNXbo1E8Xk0_SoZ5hrsbgJ_aE36zDE9zmIob-oxxAubg&oe=6ADC276C" alt="Recuerdos familiares" loading="lazy">
+                    <figcaption>Recuerdos</figcaption>
+                </figure>
+
+            </div>
+        </article>
+
+        <!-- PAQUETE XV AÑOS -->
+
+        <article class="package-card" id="xv">
+
+            <span class="num">02 / UN DÍA ÚNICO</span>
+            <h3>XV años</h3>
+
+            <p>
+                Una sesión para celebrar una nueva etapa.
+            </p>
+
+            <button type="button"
+                aria-expanded="false"
+                onclick="toggleGallery('gal-xv', this)">
+                Ver mini galería +
+            </button>
+
+            <div class="mini-gallery" id="gal-xv">
+
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/818365553_1877979083524764_175093397898951657_n.jpg?stp=dst-jpg_tt6&cstp=mx1024x1536&ctp=s1024x1536&_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_ohc=lr3vp6w3WQMQ7kNvwH8OUad&_nc_oc=Adqj1PQsS6snnhQW2oPZP0r4aVByM5TijrewOhe0vIUaidWW7Ws6xTwMn2r2RqdY0qV8JwEitnAh_gNFXzLZadVp&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=y2hJlsPqnZ2T79mJIIQLyw&_nc_ss=7b2a8&oh=00_AQOsCG6qw5tosenvcS-1CHuPAAbcsSpRRQ9fcKSrqOoMGQ&oe=6ADC42DE" alt="Sesión elegante" loading="lazy">
+                    <figcaption>Elegancia</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/808896875_1874442620545077_6109726540537963660_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1365&ctp=s2048x1365&_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=-kEuJPpG7g0Q7kNvwFLIPZa&_nc_oc=AdoZz1SZ-94gFGMs6rOhIe40qMmsMizZFp_ax_mdghoppyHqpfTn_rO8PZ8cPVwV8-vN0OrUI6Uj2dDbnIS3u28B&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=8Zbi-SXaNqP88KC1dvqQxw&_nc_ss=7b2a8&oh=00_AQPh9hxAZlWvw-R5oHhPMXtv5kzmf23YJcSQjUgf0hN5hA&oe=6ADC2A80" alt="Retrato de mujer" loading="lazy">
+                    <figcaption>Retrato</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/776200558_1845962673393072_149384895881201244_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1366&ctp=s2048x1366&_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=KdiiV3K_QPwQ7kNvwH5gtND&_nc_oc=Adr35Xp0s4QDGao0qfRgNUXXPvhQFKN6t4w9neuHA34ro5z0T2r9D9KxgjP6KEU93wK5JHFbl4lU_SNoJZ8h6Zey&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=tvOw8aIcIjL2oK80rdkBJQ&_nc_ss=7b2a8&oh=00_AQNKTw9x6X4O_zejpNVpM-IKMtRV2y3lnm570OsfRuVo5w&oe=6ADC1303" alt="Retrato artístico" loading="lazy">
+                    <figcaption>Estilo</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/654249997_1712240993431908_2545456016643536091_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1365&ctp=s2048x1365&_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=CzTg_Y_hVUcQ7kNvwFnCccz&_nc_oc=Adpsl08mR5csCLZmPPSx8s5jvihiZuhb5OFaNmSDJvBmFyHhw27KjBmk_1A9cs1MclRTbbT-ItUsLMSrwOHg6g9P&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=cawr_V7GjTafFBQk9aGrsw&_nc_ss=7b2a8&oh=00_AQM2dL8CW4gqGgtStu_v54LwYq-jntbKw-3ieQu505CFWw&oe=6ADC206D" alt="Retrato en exterior" loading="lazy">
+                    <figcaption>Personalidad</figcaption>
+                </figure>
+
+            </div>
+        </article>
+
+        <!-- PAQUETE CASUALES -->
+
+        <article class="package-card" id="casuales">
+
+            <span class="num">03 / NATURALIDAD</span>
+            <h3>Casuales</h3>
+
+            <p>
+                Retratos espontáneos y personales.
+            </p>
+
+            <button type="button"
+                aria-expanded="false"
+                onclick="toggleGallery('gal-casuales', this)">
+                Ver mini galería +
+            </button>
+
+            <div class="mini-gallery" id="gal-casuales">
+
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/707678473_1770582920931048_2723161860962584357_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1365&ctp=s2048x1365&_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_ohc=OOeO1uo5u9cQ7kNvwHr_1tq&_nc_oc=AdrihMrDSLp2x8e4uqV_RGfeaPIfTRDbQ7FZkgIOp3HOKy0GIcM6CgoM5dbGyfB62-8TF42HsuIOiAjziwA8TmnE&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=CbDOlXVagf5BFwUfZIXtyw&_nc_ss=7b2a8&oh=00_AQMx0-h3a6KozyQ4xslZ5wPYcTfKqTb01YbPjjGcUXqTJw&oe=6ADC29B4" alt="Retrato casual" loading="lazy">
+                    <figcaption>Retratos</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/763103803_1834152964574043_8659354993808164231_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1365&ctp=s2048x1365&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=olTUKLhzwrcQ7kNvwGy0yM9&_nc_oc=Adq44loJHRi3Na1OKO_vguOYRkvxqNJnUTysOn21d26QA9tziJXABnDJ6ckQlkbWY87AyFNtWkwWC8_JQohpG3ml&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=fsP8v58XLlaYOrIN8M_f7A&_nc_ss=7b2a8&oh=00_AQNc93Wu3PLVj1-Pu7bwiz_A79U8IcQLs9FKWe6ufrcjUw&oe=6ADC345A" alt="Retrato natural" loading="lazy">
+                    <figcaption>Natural</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/814319935_1874444407211565_6732880261174913716_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1235&ctp=s2048x1235&_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_ohc=xQlhp3E56ocQ7kNvwEFe0P3&_nc_oc=AdqjyoflLLJdPt2tUelD7ETDoRO9SKNnPPYwtObl9_eT4ru7eQMXezoc75gyBo1FbxJrzfQGwn-xH_hkSfUA-Rrt&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=-U55sT2TEiNNvgn98JCIVw&_nc_ss=7b2a8&oh=00_AQOZim_xVqk74kmncNff0OKBGsw-iNFatUaXtstgI4muzw&oe=6ADC28C6" alt="Retrato exterior" loading="lazy">
+                    <figcaption>Exterior</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/684270968_1745512500104757_721525217332681313_n.jpg?stp=dst-jpg_tt6&cstp=mx1365x2048&ctp=s1365x2048&_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=_OkqGLnLbhIQ7kNvwFCJnsY&_nc_oc=Adr02P1KvBMYyHUEssKhjIcf71SF3XyJiXn3eQK1i2A_nhyAyL-4XjDcljMFMwTibxWAqzFb__8sa8q-sv6zSC3t&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=Pog89Qy_cSxkX1G-YDsXCg&_nc_ss=7b2a8&oh=00_AQNavr75lUAbg2qFBPLEwvD2KrnOWH0RHaiwKImUuo0yAw&oe=6ADC17A2" alt="Retrato personal" loading="lazy">
+                    <figcaption>Tu estilo</figcaption>
+                </figure>
+
+            </div>
+        </article>
+
+        <!-- PAQUETE NAVIDAD -->
+
+        <article class="package-card" id="navidad">
+
+            <span class="num">04 / TEMPORADA</span>
+            <h3>Navidad</h3>
+
+            <p>
+                Recuerdos cálidos para compartir.
+            </p>
+
+            <button type="button"
+                aria-expanded="false"
+                onclick="toggleGallery('gal-navidad', this)">
+                Ver mini galería +
+            </button>
+
+            <div class="mini-gallery" id="gal-navidad">
+
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/605293575_1642114217111253_1067995807245334689_n.jpg?stp=dst-jpg_tt6&cstp=mx1553x2048&ctp=s1553x2048&_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=RXE_qX7RniAQ7kNvwH58AT5&_nc_oc=AdqEhEin1KMcNftZTNlpRqDj8y3TuoAES8Nhfj6RTBqk3Xg1lXIxtpRZA_kvCrBw8aDIJrEYNzLk1K4sJHY4namc&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=NI76G3oub8rtTF2OylX5bg&_nc_ss=7b2a8&oh=00_AQP1Fez9H8tcnvnzIsx8iNPmyuXW69cKbQiKWp_YLkveGQ&oe=6ADC38EB" alt="Decoración navideña" loading="lazy">
+                    <figcaption>Temporada</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/605727741_1642254437097231_7472263668586722140_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1330&ctp=s2048x1330&_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=zbAZ_492VmEQ7kNvwEk59X4&_nc_oc=AdooHS3vtbLw_8DCuljEdUPFVGnmzGQo6STbolX1sAEzNHU7-rjO-CsXpFvamCtt32tLePw71TqDR9Oa9M9Chjkv&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=OBNTjXz-f3GVwj6tUWvHyQ&_nc_ss=7b2a8&oh=00_AQM4yGJbKBQB7HeyfwMhsi0EUJYA7qYN5xfQ3OtZVSunxQ&oe=6ADC4662" alt="Decoración festiva" loading="lazy">
+                    <figcaption>Celebración</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/583710223_1609662433689765_403954969882572551_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1408&ctp=s2048x1408&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=M-z_DCpx0rIQ7kNvwFN-mAO&_nc_oc=AdodJ-1yZzlSsQlFkRD7rAzjB7nDbw-_3yg6OEs0wKvdnqoAbx1ISIOB1QW2XfEFKFxOhiQAj7lYWSXKZGCs9D8p&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=nafOb9nBJFmKNcNSfboLSA&_nc_ss=7b2a8&oh=00_AQNqBuaugJ-_nKUKyDdfnbXaEnlU34pdfQZEw-Pgk1JiYA&oe=6ADC4521" alt="Adornos navideños" loading="lazy">
+                    <figcaption>Detalles</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/605941813_1640703373919004_4588381315258203634_n.jpg?stp=dst-jpg_tt6&cstp=mx1398x2048&ctp=s1398x2048&_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_ohc=rbYUj6O6mWkQ7kNvwG5xhrr&_nc_oc=AdpF3aKL0lVkwVvhxMJ7V4ADZ87UiBpISwPq2SR9VuhMznkC_ajAU5Eg14yPtIy5RXSfN5-KUi-G8O2YonEMhPb8&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=Qdil8ToWoR9Y3cjwr4329Q&_nc_ss=7b2a8&oh=00_AQOpqxz5HaJrgwGr3-Vnv3UFKgZlU0D6hQIyjiperldMmg&oe=6ADC3575" alt="Árbol de Navidad" loading="lazy">
+                    <figcaption>Navidad</figcaption>
+                </figure>
+
+            </div>
+        </article>
+
+        <!-- PAQUETE RECIÉN NACIDO -->
+
+        <article class="package-card" id="recien-nacido">
+
+            <span class="num">05 / TERNURA</span>
+            <h3>Recién nacido</h3>
+
+            <p>
+                Los primeros recuerdos de tu bebé.
+            </p>
+
+            <button type="button"
+                aria-expanded="false"
+                onclick="toggleGallery('gal-bebe', this)">
+                Ver mini galería +
+            </button>
+
+            <div class="mini-gallery" id="gal-bebe">
+
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/647205883_1700198474636160_2671749876443240103_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1365&ctp=s2048x1365&_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_ohc=hqi5Vpo8OhwQ7kNvwEzE8Km&_nc_oc=Adrv0gYLi_zr1lnvOxZELMYR85iM2_51P_gaSM0602HuDB21vNrfaR5eEZ40F95Xzy3gREZHI253Sd6HWdOG_N3Q&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=_iS-D-hfFns_32IpBpuoIg&_nc_ss=7b2a8&oh=00_AQM-CB5EkkDL9jdpveBCvmstU1BAR5Qze_vTA14VPF0--A&oe=6ADC162F" alt="Bebé" loading="lazy">
+                    <figcaption>Ternura</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/498213650_2804162696456375_1353992192203654601_n.jpg?stp=dst-jpg_tt6&cstp=mx1600x1063&ctp=s1600x1063&_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=EZBr-sAPwIUQ7kNvwEHwRD4&_nc_oc=AdqsJj4DzrAvW_bAuxL414JWMDCINddix2rlgohyc6-A9yMexUvxn6DhFhbnHUssyhtbpvLGDhRWNC9LfqHjxLZZ&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=hoecOoTkPB3TW7Cx4Bu8Tg&_nc_ss=7b2a8&oh=00_AQOYx0x0p6ScsPO9cSNTbLuMPn8VKDs3xVJowk7ZNg2R4w&oe=6ADD692B" alt="Detalles delicados" loading="lazy">
+                    <figcaption>Detalles</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/646080524_1700198534636154_5665723840626576577_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1551&ctp=s2048x1551&_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=kZ6t0Kb9h9AQ7kNvwG1HeRU&_nc_oc=AdoYRZiNwfprbgkV0iIXhJOU-ac9F-VUtxGLNqs-b3QQ3fh-1o4jHFBYcOq2TGwQlX6FAUD2IJGLwnAV5xFaCqIE&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=JKL0QWzpcl29qsuyd419-w&_nc_ss=7b2a8&oh=00_AQMJ_-sn_Av-zMkq0WayhekxvicdlFoNmm3K-hV4TqMcEA&oe=6ADC36CA" alt="Artículos de bebé" loading="lazy">
+                    <figcaption>Primeros días</figcaption>
+                </figure>
+
+                <figure>
+                    <img src=" https://scontent.ftam2-1.fna.fbcdn.net/v/t1.6435-9/33160483_853086551564009_8002710703192408064_n.jpg?stp=dst-jpg_tt6&cstp=mx1703x1789&ctp=s1703x1789&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=N45E3Jy6d5kQ7kNvwFQI-QW&_nc_oc=AdqILJzOwRmKcdSLfBQBzEOh85_H5zilu9FH7HdJfboRShFah1XvU5uOy7BqvG8GPrU4Abigwr1oW-arlBYe7HO_&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=jb_eisQAFaQJx5j2KDE7JQ&_nc_ss=7b2a8&oh=00_AQMeevv4MPfpGztLWHs7zb-4JBYi6oDDGcmpabUlaGEjJA&oe=6AFF0DD8" alt="Familia y bebé" loading="lazy">
+                    <figcaption>Familia</figcaption>
+                </figure>
+
+            </div>
+        </article>
+
+        <!-- PAQUETE BODA -->
+        <article class="package-card" id="boda">
+            <span class="num">06 / CELEBRACIÓN</span>
+            <h3>Boda</h3>
+            <p>Fotografías para recordar cada detalle de ese gran día.</p>
+            <button type="button" aria-expanded="false" onclick="toggleGallery('gal-boda', this)">Ver mini galería +</button>
+            <div class="mini-gallery" id="gal-boda">
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t1.6435-9/40502036_943274929211837_8816494731044323328_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1361&ctp=s2048x1361&_nc_cat=110&ccb=1-7&_nc_sid=cf85f3&_nc_ohc=UNqcYuAOVsoQ7kNvwG6eeAH&_nc_oc=Ado4lEqOFIz2dLWDKn_TqmBwZujxuybzYAcrAoIzZB7zFx5z6-mkcWzpO9nlZG6rR9Qw4Vewnp4-GTUpMV5XOVBn&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=bZx9dx2E3b_oCsFGVb-urg&_nc_ss=7b2a8&oh=00_AQPestCQcL3-DB2-A_KciQOfsQLZ0nCktpFg1LQKK3ersw&oe=6AFF0B59" alt="Boda fotografía 1" loading="lazy">
+                    <figcaption>Boda</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/485394371_1403053654350645_4638060261018357902_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1365&ctp=s2048x1365&_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=nsG-4Zeh-MkQ7kNvwEZNz2D&_nc_oc=AdpS7sZn9rx6CnFBHcAR_p4nEes00anq7H4w4EXovEA521CSoP30WLrc2pjQXC4ykKCPEWbtPJV_mDfEp3C0Ahq5&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=WFoFlNzo0dilTOyTHrVGug&_nc_ss=7b2a8&oh=00_AQM48p6PiF0fMcu8_YBQiA9Jd3PoUG_DR_5JhrRCqr6Yww&oe=6ADD94B6" alt="Boda fotografía 2" loading="lazy">
+                    <figcaption>Sesión</figcaption>
+                </figure>
+            
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/486472638_1409395610383116_2172407250552991000_n.jpg?stp=dst-jpg_tt6&cstp=mx1365x2048&ctp=s1365x2048&_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=rLupCgspKm4Q7kNvwGkgMTI&_nc_oc=AdqmgapPmwsHruDlbFJfSOS1XiXlSWdDMEhtS4ZtzaOMaGCIslOnoo5VJUPnqB7emLjJv7sOCGxXgF597x88zGM7&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=fr_25FoUjsDdsKVM6whOyQ&_nc_ss=7b2a8&oh=00_AQNBESqNWoAHCl1e6acuFigvrYIIDAoFQxRmHKxFKBV_2g&oe=6ADD78A7" alt="Boda fotografía 3" loading="lazy">
+                    <figcaption>Detalles</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/486509787_1409395217049822_6033419287352187639_n.jpg?stp=dst-jpg_tt6&cstp=mx1365x2048&ctp=s1365x2048&_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=DTBE3DdZFEYQ7kNvwFWDv4j&_nc_oc=AdojSd0azP30pJUvzoCJXUkfLpocoSkPxdG5g07pT2OcPNK3T5ecH_J7y5eRZ_z0WAb7yymDCcTJfCWlTnAWBWKB&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=LmqxjGhslLzOE50lNmuEPQ&_nc_ss=7b2a8&oh=00_AQN9YjPc5ZYc-GMAHxJ7gaKVmk6ETV2h1pbb3fnMXpzTFQ&oe=6ADD968F">
+                    <figcaption>Recuerdos</figcaption>
+                </figure>
+</div>
+        </article>
+
+        <!-- PAQUETE SESIONES VAQUERAS -->
+        <article class="package-card" id="sesiones-vaqueras">
+            <span class="num">07 / ESTILO</span>
+            <h3>Sesiones vaqueras</h3>
+            <p>Retratos con estilo vaquero en exteriores.</p>
+            <button type="button" aria-expanded="false" onclick="toggleGallery('gal-vaqueras', this)">Ver mini galería +</button>
+            <div class="mini-gallery" id="gal-vaqueras">
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t1.6435-9/50084483_1015018222037507_8797042742556360704_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1361&ctp=s2048x1361&_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=1rjo0685WL4Q7kNvwGt6gt8&_nc_oc=AdpQtBjNKts0HG7jYKZEXfQyaXw0qmNF2F_7Ktl6kuW8bBhzeRHXVlttIvrFDkC9tFZXfpYfk0ve8OQgSkNdxRXt&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=c-k3xCT3OnjPIiOPnLBjuQ&_nc_ss=7b2a8&oh=00_AQNmODVv3NPdoaw8UcIsuYjqA8Z_VY0NDvA4ZYRDgH14dg&oe=6AFF31E0" alt="Sesiones vaqueras fotografía 1" loading="lazy">
+                    <figcaption>Sesiones vaqueras</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/503297550_2820829044789740_5144776586786280128_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1361&ctp=s2048x1361&_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=Q6DHWVDv2EcQ7kNvwFzS6kR&_nc_oc=Adryd058pfGkawUnWQr4-E_Rh0DvdshzDecrPFN0wzp0Vonpi1BgJ1oh0EyDazjwDB7nu7xIbCgNv-doABoYijjA&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=I_rcglN8y_FPng3KtB1T1g&_nc_ss=7b2a8&oh=00_AQOa-bpe40myzMAtqk3VWG0Q59NunpI-d-ocrwmEtP5ssg&oe=6ADD983B" alt="Sesiones vaqueras fotografía 2" loading="lazy">
+                    <figcaption>Sesión</figcaption>
+                </figure>
+            
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/813614135_1874433617212644_4544896448951218244_n.jpg?stp=dst-jpg_tt6&cstp=mx776x1183&ctp=s776x1183&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=dXrpwjhIlWYQ7kNvwFCk9Q1&_nc_oc=AdoWQ28ZKUBmpJSK3dWTsV4MZETKwZFANlCywTYVBhJBsuVCcaxdiUBae3UYweVEapLCvRSMtHhz7TgPO5hJEUBO&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=bhp26azJlAzoIPR2x2UEuA&_nc_ss=7b2a8&oh=00_AQMU68zQFfdLC7NBlUs3_LPwReTssk1skdk98RJpmN2CTw&oe=6ADEC566" alt="Sesión vaquera fotografía 3" loading="lazy">
+                    <figcaption>Detalles</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/814088576_1874436790545660_6551668480395223584_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1365&ctp=s2048x1365&_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=kWQD8qnRfdEQ7kNvwEZewCO&_nc_oc=Adp5p7t5hnZ3vdzbJaEN0jQ1TYwP3r7TFgPAmPkZR_F1Ygkx6CeJP9lSxRSTzhG1LMKt7SUtLNYEUNf7EYGAiOKz&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=sBo6Bx3gCwR9ujTIWEAuvQ&_nc_ss=7b2a8&oh=00_AQOFZRINmLTW9bV6CUpT12wKB4f7Djx3kcBqrI0axdJ1AA&oe=6ADEC5EB" alt="Sesión vaquera fotografía 4" loading="lazy">
+                    <figcaption>Recuerdos</figcaption>
+                </figure>
+</div>
+        </article>
+
+        <!-- PAQUETE MATERNIDAD -->
+        <article class="package-card" id="maternidad">
+            <span class="num">08 / ESPERA</span>
+            <h3>Maternidad</h3>
+            <p>Una sesión para guardar el recuerdo de esta etapa.</p>
+            <button type="button" aria-expanded="false" onclick="toggleGallery('gal-maternidad', this)">Ver mini galería +</button>
+            <div class="mini-gallery" id="gal-maternidad">
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/480140549_2712764242262888_5199312061264197948_n.jpg?stp=dst-jpg_tt6&cstp=mx1280x851&ctp=s1280x851&_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_ohc=Lb3hF8FkEGQQ7kNvwHES84n&_nc_oc=AdrSA5n5yyXFJ2YdknvHK7AkcBTtVyRL3WhumVYUXtDufY5JmsBnW4e9_Zl0LUckbUnyrAkXI4UJApfUHJwrU72D&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=p7EVb0iqxBx11LKX1XrdeQ&_nc_ss=7b2a8&oh=00_AQPtjzDTwWrK6ADL4hXUJUbb5NolMSlKjsVWUsh_dcqjMA&oe=6ADD9626" alt="Maternidad fotografía 1" loading="lazy">
+                    <figcaption>Maternidad</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/502531003_2820168554855789_1879545949693309237_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1394&ctp=s2048x1394&_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=Lg7y23ppx34Q7kNvwHQBKKX&_nc_oc=AdojCG4yktIGbu-CidPE9IYsUFwawhcW0TyuCqIgU77Hxarv2olJjOSui19f9UcMXNb1-8rT_KUlEX3UifP99KZ2&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=BmhqHIvpAogCJ9kn2iVeBA&_nc_ss=7b2a8&oh=00_AQNxOXhrErrQd4CIBLT9agtkgK2mPAgtq-wZbok9aCh9pQ&oe=6ADD6767" alt="Maternidad fotografía 2" loading="lazy">
+                    <figcaption>Sesión</figcaption>
+                </figure>
+            
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/671855786_1736046441051363_7456912593815556074_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1152&ctp=s2048x1152&_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=-_5uqWrqQJQQ7kNvwFGAsG_&_nc_oc=AdrggWHNSBOambVLvqPZB1PE4XYDaHmVd85Cfhc5mWAUotKR0SYHL-B1HD1QBgcBmArmxHQDJpRy4L93aUYAsF3x&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=nx3Qel4s--Ie_106yAAhMw&_nc_ss=7b2a8&oh=00_AQOTYResdh5POdO_VzDNEeXggJw_ZORtN7Rxqk7WR2-sQw&oe=6ADED24F" alt="Maternidad fotografía 3" loading="lazy">
+                    <figcaption>Detalles</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/502999034_2820282884844356_5324117711881906758_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1403&ctp=s2048x1403&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=cWlHpBH3-XQQ7kNvwH7L0vm&_nc_oc=AdpLlp9XffzXgrByTKfO2Eap83xYyRUdgyU3q1cPA7ZiD4E5X_dJGMaAIMHFClIsOvEFeATkRXhPyJThf2ekiBq4&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=q98tNxOS4IFxJjlIeKn-Mg&_nc_ss=7b2a8&oh=00_AQPq0hMCGd5BlevV8BuweFcbasurgkQhI8lAiHnVBAlk7w&oe=6ADEB7A7" alt="Maternidad fotografía 4" loading="lazy">
+                    <figcaption>Recuerdos</figcaption>
+                </figure>
+</div>
+        </article>
+
+        <!-- PAQUETE FORMAL -->
+        <article class="package-card" id="formal">
+            <span class="num">09 / ELEGANCIA</span>
+            <h3>Formal</h3>
+            <p>Retratos elegantes para una ocasión especial.</p>
+            <button type="button" aria-expanded="false" onclick="toggleGallery('gal-formal', this)">Ver mini galería +</button>
+            <div class="mini-gallery" id="gal-formal">
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/705607323_1770585437597463_1620029632505338289_n.jpg?stp=dst-jpg_tt6&cstp=mx1152x2048&ctp=s1152x2048&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=TcTqMIj1X8wQ7kNvwE01DRt&_nc_oc=Adr2wzdOG9gh5tfJLNbESIXOzwDt0Y-PIilsCsLPSdafS67lorYUP1L5BxfZPhhVg8YcpFIKZj1L0vNKvZ1LQZjB&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=lpMClrK5EMxMqDTs5DR6FQ&_nc_ss=7b2a8&oh=00_AQPT0a0GdzvJNRfWCB9mP7I03zeWSy0dOg9Ywg9zTNxOxg&oe=6ADEC2C4" alt="Formal fotografía 1" loading="lazy">
+                    <figcaption>Formal</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/707023830_1770583087597698_3731778067802575666_n.jpg?stp=dst-jpg_tt6&cstp=mx1365x2048&ctp=s1365x2048&_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=6w03dBl192UQ7kNvwGHaTgt&_nc_oc=Adqsh-rcT1P7gUAn0fOFlVxAtU-AJz4oYwMneldr9KPBOpmCR-IO_VpK1v2q2QcUOSjv3ZwuDjmGJGnZs-o9i6Qg&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=qSbENyOnMRAthF6Q7mP6iA&_nc_ss=7b2a8&oh=00_AQM15e06h3UvPeHIsKTXN3WxZjE3oJ7qVq0zmDd-wW2EbQ&oe=6ADEB291" alt="Formal fotografía 2" loading="lazy">
+                    <figcaption>Sesión</figcaption>
+                </figure>
+            
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/474524527_1359506045372073_2517544836242394006_n.jpg?stp=dst-jpg_tt6&cstp=mx851x1252&ctp=s851x1252&_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=TmxkzpRsrycQ7kNvwGGxpaM&_nc_oc=Ado6jlVA5Q384p0fMkKRbgQ5A_C45a54AmHb0EUdWX-btviKTRmE8KiSuN1J2L-BIxiwXUFytiHoJ-ySx6tUZ9v5&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=E9o26Wi5xHnnrrFW8EGXrg&_nc_ss=7b2a8&oh=00_AQNnnuE_ETFo6pX_2BH2Ja3Nl0VMQ2PGJ7soAVmRKB6TDQ&oe=6ADEB08A" alt="Formal fotografía 3" loading="lazy">
+                    <figcaption>Detalles</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/474472935_1356380955684582_7395381213189994911_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1362&ctp=s2048x1362&_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_ohc=HeESlHLJk6EQ7kNvwHlPqkA&_nc_oc=Ado11jTR_V0a0CsGicgRVNRtHTvZdWNJw6B8PiS9OCqmDr6mXPKrfchedNX8maFfWhxAwjOis219pbLZfbyfpOoB&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=qykMCkWxl2vGzrnaoaPj-g&_nc_ss=7b2a8&oh=00_AQPn_XfF6aj-fAydXFv2RNkleAONlcI8C1vZ7jjDz-bK-A&oe=6ADED2C4" alt="Formal fotografía 4" loading="lazy">
+                    <figcaption>Recuerdos</figcaption>
+                </figure>
+</div>
+        </article>
+
+        <!-- PAQUETE PAREJA -->
+        <article class="package-card" id="pareja">
+            <span class="num">10 / CONEXIÓN</span>
+            <h3>Pareja</h3>
+            <p>Capturamos su conexión en fotografías naturales.</p>
+            <button type="button" aria-expanded="false" onclick="toggleGallery('gal-pareja', this)">Ver mini galería +</button>
+            <div class="mini-gallery" id="gal-pareja">
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t1.6435-9/78713482_1257516541121006_7461305173311225856_n.jpg?stp=dst-jpg_tt6&cstp=mx1365x2048&ctp=s1365x2048&_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=RvTzr2Eo0fMQ7kNvwHIAMN0&_nc_oc=AdpR9r5DoAG49Hxsa3nGCM6V_ZYhxHt8VDnoUDHTosvzWYSzO4gDBqN_WIayUdv1yLcn1QyzmxWiGCieJJMfngvq&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=Vp8tufrtO0XTYpv1zgTWOA&_nc_ss=7b2a8&oh=00_AQN7V2z6q1wMpMK_tftd2lEzkwBhbdh-YG8ITKf_xWHBPQ&oe=6B005B23">
+                    <figcaption>Pareja</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/496926694_2801861280019850_7496646124681075713_n.jpg?stp=dst-jpg_tt6&cstp=mx1361x2048&ctp=s1361x2048&_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=MqXhgZWuE6wQ7kNvwFQHl1X&_nc_oc=AdrACmZEyweKEInxTHAfdmtbrTsQztlKdRAtMwxedDfCBIUliUbt4hnSlJbE9oIJundOvUoH4jvk1WcsF8IO2MwN&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=JHnXWEA0NaN5dDT0rjm_Zw&_nc_ss=7b2a8&oh=00_AQMAVbU8MqMkOi0XzuF-LYMstEJWTFXHx8x3e6Mhf2aY6w&oe=6ADEC5B4" alt="Pareja fotografía 2" loading="lazy">
+                    <figcaption>Sesión</figcaption>
+                </figure>
+            
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/497455947_2801173420088636_5371010491297091473_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1638&ctp=s2048x1638&_nc_cat=105&ccb=1-7&_nc_sid=cf85f3&_nc_ohc=0G2OmEhGOxoQ7kNvwHnzSzm&_nc_oc=AdrFhBbN55fK9NHBgnT_TzoehC9zNqZ4L0UpDxaMh89hTXeN5TAg_IrZFB9DNRDxMNqmoM6XR2V4UtmIhkb0CF6N&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=VYhIehkToEpy8HrH-6KeKQ&_nc_ss=7b2a8&oh=00_AQMfs3N5nPwkMMVcq_sbaHIkQOlHh_R3Ei7SXTJggXrSgw&oe=6ADEB50C" alt="Pareja fotografía 3" loading="lazy">
+                    <figcaption>Detalles</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/484857864_1402213977767946_679233531888354145_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1387&ctp=s2048x1387&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=sjvnaidChz4Q7kNvwEfICCY&_nc_oc=AdqVYVKVkDR9c_SaBU9MvwbmPmYnvbxJYZnr6P_RJsYvvOlsflMpL1gH99gFy1UfsVcKHjjJhLchR9GDJGMUtpSJ&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=bkNzKBT_bSzg6nfnhGb77w&_nc_ss=7b2a8&oh=00_AQPubRaY6PIVITSTTymwIy4-FpZYRIeDox3WDV8SGxp82g&oe=6ADECBFB" alt="Pareja fotografía 4" loading="lazy">
+                    <figcaption>Recuerdos</figcaption>
+                </figure>
+</div>
+        </article>
+
+        <!-- PAQUETE DÍAS ESPECIALES -->
+        <article class="package-card" id="dias-especiales">
+            <span class="num">11 / RECUERDOS</span>
+            <h3>Días especiales</h3>
+            <p>Celebra cumpleaños, aniversarios y fechas importantes.</p>
+            <button type="button" aria-expanded="false" onclick="toggleGallery('gal-dias-especiales', this)">Ver mini galería +</button>
+            <div class="mini-gallery" id="gal-dias-especiales">
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/477001396_1372776487378362_7122721650358218137_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1365&ctp=s2048x1365&_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=S6P04nIqgqQQ7kNvwHNyuSo&_nc_oc=AdpqIOq_fRKdQSa0UQbDjpnYyDTDXmeKqyLe3rDs8ZcAzWIKx6Nlhzr8XE6a1id1JTMB5EG8zZV7FCiMHAFceSf4&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=UfMeDqdT7RtOAX48oyDsjw&_nc_ss=7b2a8&oh=00_AQOHSoCBWX2_exsjR_CsRvJSFR1o35UlQOLrYYfG8zRiKg&oe=6ADED7B6" alt="Días especiales fotografía 1" loading="lazy">
+                    <figcaption>Días especiales</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t1.6435-9/59638163_1089770471228948_7871150542041382912_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1190&ctp=s2048x1190&_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=WNUGpddS_RQQ7kNvwEZotVH&_nc_oc=Adq4M3N8RBLdOHKz2C61DQUpsTJPEIgVjMoUQaKJ_eQnTvr13DHQDwLwi3VY3zijhjDbX0QFAirYgsZ6DNVAeusr&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=YNFa7XgsMJ8CNVhktgDPQg&_nc_ss=7b2a8&oh=00_AQPD9L5IuL5Evxiek_vCVnpaW3xr3Twpdb-egcJ9uUItdQ&oe=6B007684" alt="Días especiales fotografía 2" loading="lazy">
+                    <figcaption>Sesión</figcaption>
+                </figure>
+            
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/618506930_1665542748101733_3062041801347831993_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x1024&ctp=s1536x1024&_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=evurzKEOgPcQ7kNvwG-Sa2h&_nc_oc=AdpBYr8fODOpIJpGQld_Xq6RnaT0N-pnEyqNmVB2awx3U7gsnuHMqSRrrV2kCEfPLofoPKKq2Q1HriKtDusZzy0-&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=iiVxxO4Mzw9QluO0Z6zymQ&_nc_ss=7b2a8&oh=00_AQNa9vMf2tiyW7PGhgzqr4W5_qffsi7vgcF3ZISBiKHAlA&oe=6ADEC4E8" alt="Días especiales fotografía 3" loading="lazy">
+                    <figcaption>Detalles</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/608552944_1646727956649879_7287382362062198241_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=3VFMJsR_PRIQ7kNvwEDgSd0&_nc_oc=AdqnZCnxlv54F4V461rSkXT_uKj2jdS1YU0QsNvGHg1Nrmhg7H38OtE2RW0zwpm97kZDdfjf5nYqaN30aOlqv_HR&_nc_zt=23&_nc_ht=scontent.ftam2-1.fna&_nc_gid=ha5xM8XQVQBTqq6PRt56qQ&_nc_ss=7b2a8&oh=00_AQMTL3InX4JW2WD_0k06worl4ozeRJRp9OwBis2oqLwSkQ&oe=6ADECF71" alt="Días especiales fotografía 4" loading="lazy">
+                    <figcaption>Recuerdos</figcaption>
+                </figure>
+</div>
+        </article>
+
+    </div>
+</section>
+
+<!-- ========== CONTACTO ========== -->
+
+<section id="formulario">
+
+    <div class="heading">
+        <span class="eyebrow">Contacto</span>
+        <h2>Agenda tu sesión</h2>
+    </div>
+
+    <form class="contact-form" id="contactForm">
+
+        <div class="form-row">
+
+            <div class="field">
+                <label for="nombre">NOMBRE COMPLETO</label>
+
+                <input
+                    id="nombre"
+                    name="nombre"
+                    type="text"
+                    placeholder="Tu nombre"
+                    required>
+            </div>
+
+            <div class="field">
+                <label for="correo">CORREO ELECTRÓNICO</label>
+
+                <input
+                    id="correo"
+                    name="correo"
+                    type="email"
+                    placeholder="correo@ejemplo.com"
+                    required>
+            </div>
+
+        </div>
+
+        <div class="form-row">
+
+            <div class="field">
+                <label for="telefono">TELÉFONO</label>
+
+                <input
+                    id="telefono"
+                    name="telefono"
+                    type="tel"
+                    placeholder="Tu teléfono"
+                    required>
+            </div>
+
+            <div class="field">
+                <label for="paquete-select">PAQUETE</label>
+
+                <select id="paquete-select" name="paquete" required>
+                    <option value="">Selecciona un paquete</option>
+                    <option value="Bautizo">Bautizo</option>
+                    <option value="XV años">XV años</option>
+                    <option value="Casuales">Casuales</option>
+                    <option value="Navidad">Navidad</option>
+                    <option value="Recién nacido">Recién nacido</option>
+                    <option value="Boda">Boda</option>
+                    <option value="Sesiones vaqueras">Sesiones vaqueras</option>
+                    <option value="Maternidad">Maternidad</option>
+                    <option value="Formal">Formal</option>
+                    <option value="Pareja">Pareja</option>
+                    <option value="Días especiales">Días especiales</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="field">
+            <label for="fecha">FECHA DESEADA</label>
+
+            <input
+                id="fecha"
+                name="fecha"
+                type="date">
+        </div>
+
+        <div class="field">
+            <label for="mensaje">MENSAJE</label>
+
+            <textarea
+                id="mensaje"
+                name="mensaje"
+                placeholder="Cuéntanos qué sesión buscas">
+            </textarea>
+        </div>
+
+        <button class="btn" type="submit">
+            Enviar solicitud
+        </button>
+
+        <p id="respuesta" role="status"></p>
+
+    </form>
+</section>
+
+</main>
+
+<!-- ========== REDES SOCIALES ========== -->
+
+<footer>
+
+    <h2>CORE FOTOGRAFÍA</h2>
+
+    <p>El instante perfecto</p>
+
+    <div class="socials">
+
+        <!-- Reemplaza estos enlaces por las cuentas reales -->
+
+        <a
+            href="https://www.facebook.com/jonatansilvafotografia/"
+            target="_blank"
+            rel="noopener noreferrer">
+            FACEBOOK ↗
+        </a>
+
+        <a
+            href="https://www.tiktok.com/@jonatansilvagarci"
+            target="_blank"
+            rel="noopener noreferrer">
+            TIKTOK ↗
+        </a>
+
+    </div>
+
+    <div class="copy">
+        © 2026 CORE FOTOGRAFÍA · TODOS LOS DERECHOS RESERVADOS
+    </div>
+
+</footer>
+
+<!-- ========== FUNCIONES DE JAVASCRIPT ========== -->
+
+<script>
+
+// Abrir y cerrar las mini galerías de cada paquete.
+
+function toggleGallery(id, button) {
+
+    const gallery = document.getElementById(id);
+
+    const isOpen = gallery.classList.toggle('open');
+
+    button.setAttribute('aria-expanded', String(isOpen));
+
+    button.textContent = isOpen
+        ? 'Ocultar mini galería −'
+        : 'Ver mini galería +';
+}
+
+
+// Seleccionar automáticamente el paquete en el formulario.
+
+document.querySelectorAll('.package-card').forEach(function(card) {
+
+    const button = card.querySelector('button');
+
+    button.addEventListener('click', function() {
+
+        const packageName = card.querySelector('h3').textContent;
+
+        document.getElementById('paquete-select').value = packageName;
+
+    });
+
+});
+
+
+// Validación básica del formulario.
+
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+
+    event.preventDefault();
+
+    document.getElementById('respuesta').textContent =
+        '¡Gracias por tu interés en CORE FOTOGRAFÍA! ' +
+        'El formulario está completo. Para recibir solicitudes reales, ' +
+        'es necesario conectarlo a un servicio de formularios.';
+
+});
+
+</script>
+
+</body>
+</html>
